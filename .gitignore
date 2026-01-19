@@ -1,0 +1,10 @@
+scripts/.env
+# Ignore environment variable files
+.env
+
+Project Screenshots/rm
+
+.venv/
+__pycache__/
+
+workflow diagram/flowchart.md
