@@ -1,4 +1,4 @@
-docker setup
+#docker setup
 docker run --name capstone-db -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
 
 # Wait for the database to initialize
@@ -69,4 +69,7 @@ docker exec -i capstone-db psql -U postgres -d postgres -c "COPY (
     (amount - AVG(amount) OVER (PARTITION BY user_id)) / STDDEV_SAMP(amount) OVER (PARTITION BY user_id) as z_score
     FROM transactions
 ) TO STDOUT WITH CSV HEADER" > anomalies.csv
+
+# Run the analysis script
+cat anomalies.csv | python scripts/analyze.py
 

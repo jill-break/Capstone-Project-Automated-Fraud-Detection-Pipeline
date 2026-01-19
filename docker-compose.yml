@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  db:
+    build: ./src/db
+    # Database container configuration
+    container_name: capstone-db  
+    ports:
+      - "5432:5432"
+    restart: always
