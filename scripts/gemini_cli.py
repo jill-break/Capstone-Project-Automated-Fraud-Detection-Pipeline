@@ -16,7 +16,7 @@ def main():
 
     # 1. Configure API
     try:
-        genai.configure(api_key=api_key)
+        genai.configure(api_key=api_key) # type: ignore
     except Exception as e:
         print(f"Error configuring API: {e}")
         return
@@ -26,7 +26,7 @@ def main():
     # and pick the first one available to you.
     active_model_name = None
     try:
-        for m in genai.list_models():
+        for m in genai.list_models(): # type: ignore
             if 'generateContent' in m.supported_generation_methods:
                 active_model_name = m.name
                 break # Found one!
@@ -67,7 +67,7 @@ def main():
 
     # 5. Call API
     try:
-        model = genai.GenerativeModel(active_model_name)
+        model = genai.GenerativeModel(active_model_name) # type: ignore
         response = model.generate_content(prompt)
         
         print("\n" + "="*40)
