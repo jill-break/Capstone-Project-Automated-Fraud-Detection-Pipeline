@@ -1,6 +1,5 @@
-scripts/.env
 # Ignore environment variable files
-.env
+scripts/.env
 
 Project Screenshots/rm
 
