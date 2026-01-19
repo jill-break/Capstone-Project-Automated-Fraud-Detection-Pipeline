@@ -10,7 +10,7 @@ This project implements a **Multi-Stage AI Workflow** designed to automate the d
 2.  **Database (PostgreSQL):** To execute Z-Score analysis on raw transaction data.
 3.  **CLI Tool (Gemini AI):** To ingest the data and generate a natural language fraud alert report.
 
-[cite_start]The pipeline effectively filters thousands of transactions to identify only statistically significant anomalies (Z-Score > 2) without manual intervention[cite: 20, 21, 26].
+The pipeline effectively filters thousands of transactions to identify only statistically significant anomalies (Z-Score > 2) without manual intervention.
 
 ---
 
