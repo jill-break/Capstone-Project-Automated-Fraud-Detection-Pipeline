@@ -1,12 +1,11 @@
 ## Forensic Data Analysis Report: "The Tester" Fraud Profile
 
-**Date:** 2023-10-27
 **Analyst:** Forensic Data Analyst
 **Purpose:** To identify user accounts exhibiting patterns consistent with "The Tester" fraud profile based on provided raw transaction data.
 
 ---
 
-### Fraud Profile Reviewed: “The Tester”
+### Fraud Profile Reviewed: The Tester
 
 **Behavioral Pattern Summary:**
 This profile involves an initial sequence of low-value authorization attempts or small approved transactions, often under common fraud-monitoring thresholds. These "tester" transactions are typically followed rapidly by a significantly higher-value transaction, indicating successful validation of stolen card credentials before a large purchase is made.
@@ -43,7 +42,7 @@ For context on average transaction amount, previous transactions for User ID 101
 
 Here's how User ID 101's transaction pattern semantically matches the "The Tester" fraud profile, referencing the specific match criteria:
 
-1.  **Criterion 1: Two to three transactions under $50 (or local currency equivalent), occurring within a 5–30 minute window.**
+1.  **Criterion 1: Two to three transactions under $50 (or local currency equivalent), occurring within a 5-30 minute window.**
     *   **Analysis:** Transaction `6` (amount: $55.00) is the immediate preceding transaction to the large purchase. Strictly, its amount is not "under $50", and it is a single transaction rather than "two to three".
     *   **Semantic Match:** While `transaction_id 6` does not perfectly meet the strict numerical threshold of "$50" or the quantity of "two to three transactions", its value ($55.00) is sufficiently low to be considered an "initial low-value authorization attempt" or "under common fraud-monitoring thresholds" as described in the general behavioral pattern of "The Tester". Given the extreme difference to the subsequent $5000 transaction, it aligns with the *spirit* of a testing transaction. No other user in the dataset exhibits *any* sequence of small transactions followed by a large one.
 
@@ -58,7 +57,7 @@ Here's how User ID 101's transaction pattern semantically matches the "The Teste
         *   `Transaction 7` ($5000.00) is significantly greater than $946.00.
     *   **Semantic Match:** **MET.** `Transaction 7` ($5000.00) fulfills the high-value condition and occurred within the specified timeframe.
 
-4.  **Criterion 4: Merchant category of the large transaction is high-risk (e.g., electronics, digital goods, gift cards, travel bookings) or atypical for the cardholder’s historical spending profile.**
+4.  **Criterion 4: Merchant category of the large transaction is high-risk (e.g., electronics, digital goods, gift cards, travel bookings) or atypical for the cardholder's historical spending profile.**
     *   **Analysis:** The merchant category for `transaction_id 7` is "Electronics", which is explicitly listed as a high-risk category in the fraud profile.
     *   **Semantic Match:** **MET.** The category "Electronics" is a direct match to the high-risk merchant types.
 

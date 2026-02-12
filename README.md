@@ -9,7 +9,7 @@ This project implements a **Multi-Stage AI Workflow** designed to automate the d
 
 This pipeline uses:
 1.  **Chat AI (ChatGPT):** To generate a qualitative **Forensic Profile** of a specific fraud pattern.
-2.  **CLI AI (Gemini):** To scan raw transaction data and **semantically match** user behavior to that profile.
+2.  **CLI AI (Github Copilot):** To scan raw transaction data and **semantically match** user behavior to that profile.
 
 This demonstrates a "Chain of Thought" workflow where the *logic* is defined by one AI and *executed* by another, removing the need to write hard-coded SQL queries for every new fraud trend.
 
