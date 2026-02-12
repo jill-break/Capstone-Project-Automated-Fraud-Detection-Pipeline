@@ -10,3 +10,8 @@ workflow diagram/flowchart.md
 
 fraud_report.txt
 instructions.txt
+.env
+docker-compose.yml
+eee.md
+my-sanity-project/
+src/*

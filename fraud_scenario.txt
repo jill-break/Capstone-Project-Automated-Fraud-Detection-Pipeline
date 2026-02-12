@@ -1,0 +1,19 @@
+Fraud Profile: “The Tester”
+
+Behavioral Pattern:
+“The Tester” is characterized by a sequence of low-value authorization attempts or small approved transactions, typically at online merchants or digital services, followed by a significantly higher-value transaction within a short timeframe. The initial transactions are often under common fraud-monitoring thresholds and may occur in rapid succession or across different merchants. Once one or more small transactions are approved, a substantially larger purchase is executed, often at a high-risk merchant category (e.g., electronics, gift cards, travel).
+
+Fraud Rationale:
+This pattern indicates deliberate validation of stolen card credentials. Fraudsters use low-value transactions to confirm that the card number, expiration date, CVV, and billing information are valid and that the card is active. Small amounts reduce the likelihood of immediate cardholder detection or automated declines. Upon successful validation, the fraudster escalates to a high-value transaction to maximize financial gain before the card is blocked.
+
+Specific Match Criteria:
+Flag accounts meeting all of the following conditions:
+
+1. Two to three transactions under $50 (or local currency equivalent), occurring within a 5–30 minute window.
+2. At least one of the small transactions is approved.
+3. A subsequent transaction over $4,000 (or >20x the average cardholder transaction amount), occurring within 60 minutes of the last small transaction.
+4. Merchant category of the large transaction is high-risk (e.g., electronics, digital goods, gift cards, travel bookings) or atypical for the cardholder’s historical spending profile.
+5. Transaction velocity and geolocation inconsistent with established customer behavior (e.g., new device, new IP, foreign country, or card-not-present channel).
+
+Risk Assessment Directive:
+Transactions matching this sequence should be assigned high fraud probability, trigger immediate step-up authentication or temporary authorization hold, and prompt real-time customer verification.
